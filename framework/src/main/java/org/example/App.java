@@ -10,8 +10,15 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
-        final ApplicationContext context = new ClassPathXmlApplicationContext();
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:services.xml");
+
+        Object aService = context.getBean("aService");
+        System.out.println(aService);
 
 
+        context = new ClassPathXmlApplicationContext("classpath:backup/services.xml");
+
+        aService = context.getBean("aService");
+        System.out.println(aService);
     }
 }
