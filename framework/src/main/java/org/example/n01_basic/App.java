@@ -9,7 +9,7 @@ public class App {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = null;
         try {
-            context = new ClassPathXmlApplicationContext("n01_basic/basic.xml");
+            context = new ClassPathXmlApplicationContext("classpath:n01_basic/basic.xml");
             final SimpleBean bean = context.getBean(SimpleBean.class);
 
             bean.send();
