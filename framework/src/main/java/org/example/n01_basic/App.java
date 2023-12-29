@@ -7,9 +7,10 @@ import java.util.Objects;
 public class App {
 
     public static void main(String[] args) {
+        System.setProperty("basicPath","n01_basic/basic.xml");
         ClassPathXmlApplicationContext context = null;
         try {
-            context = new ClassPathXmlApplicationContext("classpath:n01_basic/basic.xml");
+            context = new ClassPathXmlApplicationContext("classpath:${basicPath}");
             final SimpleBean bean = context.getBean(SimpleBean.class);
 
             bean.send();
